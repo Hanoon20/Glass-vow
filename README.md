@@ -47,6 +47,14 @@ Tap anywhere  →  opening film (muted)  →  dissolve into the live glass card
 - **WhatsApp RSVP** opens WhatsApp with the guest's reply already written, sent to `whatsappNumber`.
 - **Confirm Attendance** posts JSON (`name, attending, guests, message, event, submittedAt`) to `rsvp.endpoint` if you set one. Formspree and Google Apps Script both work. If no endpoint is set, it uses WhatsApp too, so every reply reaches the couple.
 
+## Link preview (WhatsApp, Facebook, iMessage)
+
+When the link is shared, `assets/images/share/og-image.jpg` shows as the preview: the hero glass card on the satin, at 1200×630. The page's `og:image` tags point to it, and the Netlify build step in `netlify.toml` turns those paths into absolute URLs (`$URL`, which is your custom domain once one is set), since WhatsApp and Facebook ignore relative image paths.
+
+The names and date are part of the image, so **re-capture it whenever they change**. Open `http://localhost:8080/?skip` in a 1200×630 window, let the card settle, and save a JPEG screenshot (under ~300 KB) over `og-image.jpg`.
+
+WhatsApp and Facebook cache previews. After changing the image, refresh it with the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) ("Scrape Again"). WhatsApp picks up the change for chats that have not previewed the link before.
+
 ---
 
 # Asset guide
