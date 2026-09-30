@@ -51,7 +51,7 @@ Tap anywhere  →  opening film (muted)  →  dissolve into the live glass card
 
 When the link is shared, `assets/images/share/og-image.jpg` shows as the preview: the hero glass card on the satin, at 1200×630. The page's `og:image` tags point to it, and the Netlify build step in `netlify.toml` turns those paths into absolute URLs (`$URL`, which is your custom domain once one is set), since WhatsApp and Facebook ignore relative image paths.
 
-The preview title (`<title>`, `og:title` and `twitter:title` in `index.html`) is written out by hand for the same reason, so update it along with the image. The names and date are part of the image, so **re-capture it whenever they change**. Open `http://localhost:8080/?skip` in a 1200×630 window, let the card settle, and save a JPEG screenshot (under ~300 KB) over `og-image.jpg`.
+The preview title and description (the `title` and `description` tags, including the `og:` and `twitter:` ones, in `index.html`) are written out by hand for the same reason, so update them along with the image. The names and date are part of the image, so **re-capture it whenever they change**. Open `http://localhost:8080/?skip` in a 1200×630 window, let the card settle, and save a JPEG screenshot (under ~300 KB) over `og-image.jpg`.
 
 WhatsApp and Facebook cache previews. After changing the image, refresh it with the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) ("Scrape Again"). WhatsApp picks up the change for chats that have not previewed the link before.
 
