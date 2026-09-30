@@ -49,7 +49,7 @@ Tap anywhere  →  opening film (muted)  →  dissolve into the live glass card
 
 ## Link preview (WhatsApp, Facebook, iMessage)
 
-When the link is shared, `assets/images/share/og-image.jpg` shows as the preview: the hero glass card on the satin, at 1200×630. The page's `og:image` tags point to it, and the Netlify build step in `netlify.toml` turns those paths into absolute URLs (`$URL`, which is your custom domain once one is set), since WhatsApp and Facebook ignore relative image paths.
+When the link is shared, `assets/images/share/og-image.jpg` shows as the preview: the hero glass card on the satin, at 1200×630. The page's `og:image` tags point to it by its full address on `https://glass-vow.dearday.lk`, since WhatsApp and Facebook ignore relative image paths. If the invitation moves to another domain, update that address in `index.html` (`og:url`, `og:image`, `twitter:image` and the canonical link).
 
 The preview title and description (the `title` and `description` tags, including the `og:` and `twitter:` ones, in `index.html`) are written out by hand for the same reason, so update them along with the image. The names and date are part of the image, so **re-capture it whenever they change**. Open `http://localhost:8080/?skip` in a 1200×630 window, let the card settle, and save a JPEG screenshot (under ~300 KB) over `og-image.jpg`.
 

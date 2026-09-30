@@ -1,7 +1,3 @@
-# Static site, no bundling. The build step only turns the link-preview
-# image paths in index.html into absolute URLs, because WhatsApp and
-# Facebook ignore relative og:image paths. $URL is the site's main
-# address on Netlify (your custom domain once one is set).
+# Static site: publish the repo root as it is, with no build step.
 [build]
   publish = "."
-  command = "sed -i \"s|content=\\\"assets/images/share/|content=\\\"${URL}/assets/images/share/|g\" index.html"
